@@ -1,0 +1,9 @@
+{
+  "name": "coinbase-kit",
+  "version": "0.0.1",
+  "description": "This is a coinbase sdk",
+  "main": "./lib/index.js",
+  "repository": "https://github.com/denlly/coinbase-kit.git",
+  "author": "Denlly <fan91163@gmail.com>",
+  "license": "MIT"
+}
