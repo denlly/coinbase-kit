@@ -4,9 +4,9 @@ This is a kit of coinbase commerce
 
 My tasks of the project.
 
-[] Initialization
-[] Authentication
-[] Charges
-[] Checkouts
-[] Webhook format
-[] Events
+[X] Initialization
+[X] Authentication
+[X] Charges
+[X] Checkouts
+[X] Webhook format
+[X] Events
