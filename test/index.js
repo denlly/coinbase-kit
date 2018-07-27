@@ -1,6 +1,6 @@
 'user strict';
 const assert = require('assert');
-const coinbaseClinet = require('../lib/index');
+const CoinbaseClient = require('../lib/index');
 
 describe('client', () => {
     const charge = {
@@ -12,13 +12,27 @@ describe('client', () => {
         customer_id: '2222222222',
         customer_name: 'customer',
     };
+    const settings = {
+        api_key: 'f03c2693-c4e1-4ed5-aa4e-0d5f54973ed5',
+        secret_key: '74b89c76-57ad-4156-a0d8-577f6852292c',
+    }
     let responseJson = {};
     let client;
 
     beforeAll(async () => {
-        client = new coinbaseClinet();
+        client = new CoinbaseClient(settings);
     })
 
+    it("init a client instanct", async () => {
+        const client = new CoinbaseClient(settings)
+        expect(client.api_key).toBe(settings.api_key);
+        expect(client.secret_key).toBe(settings.secret_key);
+        expect(client.charge).toBeDefined();
+    })
+
+    it("a charge by client", async () => {
+        const charge = new CoinbaseClient(settings).charge;
+    })
     /**
      * Test create a charge
      */
@@ -36,7 +50,6 @@ describe('client', () => {
      */
     it("Get a charge", async () => {
         const result = await client.charge.show(responseJson.data.code);
-        console.log(result);
         expect(result.data.code).toBe(responseJson.data.code);
         expect(result.data.id).toBeDefined();
         // expect(result.data.id).toBe()
@@ -46,8 +59,7 @@ describe('client', () => {
      * Get a list of changes
      */
     it("Get a list of changes", async () => {
-        const result = await client.list({});
-        console.log(result);
+        const result = await client.charge.list({});
         expect(result.pagination).toBeDefined();
         expect(result.data.lenght).not.toBe(0);
     })
