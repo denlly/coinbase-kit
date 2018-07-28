@@ -9,13 +9,12 @@
     "scripts": {
         "test": "jest --detectOpenHandles",
         "test-cov": "jest --coverage --runInBand --forceExit",
-        "lint": "eslint benchmarks lib test",
-        "bench": "make -C benchmarks",
         "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
     },
     "keywords": [
         "coinbase",
-        "coinbase sdk"
+        "coinbase sdk",
+        "coinbase commerce"
     ],
     "dependencies": {
         "request": "^2.87.0",
@@ -23,6 +22,7 @@
         "string-format": "^2.0.0"
     },
     "devDependencies": {
+        "eslint": "^5.2.0",
         "jest": "^23.4.1",
         "supertest": "^3.1.0"
     },
