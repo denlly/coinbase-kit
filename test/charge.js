@@ -23,16 +23,6 @@ describe('client', () => {
         client = new CoinbaseClient(settings);
     })
 
-    it("init a client instanct", async () => {
-        const client = new CoinbaseClient(settings)
-        expect(client.api_key).toBe(settings.api_key);
-        expect(client.secret_key).toBe(settings.secret_key);
-        expect(client.charge).toBeDefined();
-    })
-
-    it("a charge by client", async () => {
-        const charge = new CoinbaseClient(settings).charge;
-    })
     /**
      * Test create a charge
      */

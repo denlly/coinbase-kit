@@ -8,7 +8,7 @@ describe('client', () => {
         secret_key: '74b89c76-57ad-4156-a0d8-577f6852292c',
     }
     /**
-     * 
+     * This a container of result.
      */
     let responseJson = {};
     let client;
@@ -31,4 +31,7 @@ describe('client', () => {
         const checkout = new CoinbaseClient(settings).checkout;
         expect(checkout).not.toBeNull();
     })
+
+    // it("recognize webhook ", async () => {
+    // })
 })
